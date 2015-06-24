@@ -1201,16 +1201,6 @@ public class SIPServerTransaction extends SIPTransaction implements ServerReques
                     // Issue 343 : we have to log the retransmission
                     try {
                         SIPResponse lastReparsedResponse = (SIPResponse) sipStack.getMessageParserFactory().createMessageParser(sipStack).parseSIPMessage(lastResponseAsBytes, true, false, null);
-
-                        lastReparsedResponse.setRemoteAddress(
-                                        this.getPeerInetAddress());
-                        lastReparsedResponse.setRemotePort(this.getPeerPort());
-                        lastReparsedResponse.setLocalPort(
-                                getMessageChannel().getPort());
-                        lastReparsedResponse.setLocalAddress(
-                                getMessageChannel()
-                                    .getMessageProcessor().getIpAddress());
-
                         getMessageChannel().logMessage(lastReparsedResponse, this.getPeerInetAddress(), this.getPeerPort(), System.currentTimeMillis());
                     } catch (ParseException e) {
                         if (logger.isLoggingEnabled(LogWriter.TRACE_DEBUG)) {
@@ -1231,17 +1221,6 @@ public class SIPServerTransaction extends SIPTransaction implements ServerReques
                         // Issue 343 : we have to log the retransmission
                         try {
                             SIPResponse lastReparsedResponse = (SIPResponse) sipStack.getMessageParserFactory().createMessageParser(sipStack).parseSIPMessage(lastResponseAsBytes, true, false, null);
-
-                            lastReparsedResponse.setRemoteAddress(
-                                this.getPeerInetAddress());
-                            lastReparsedResponse.setRemotePort
-                                    (this.getPeerPort());
-                            lastReparsedResponse.setLocalPort(
-                                    getMessageChannel().getPort());
-                            lastReparsedResponse.setLocalAddress(
-                                    getMessageChannel()
-                                        .getMessageProcessor().getIpAddress());
-
                             getMessageChannel().logMessage(lastReparsedResponse, this.getPeerInetAddress(), this.getPeerPort(), System.currentTimeMillis());
                         } catch (ParseException e) {
                             if (logger.isLoggingEnabled(LogWriter.TRACE_DEBUG)) {
