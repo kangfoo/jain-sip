@@ -6,7 +6,7 @@
 	<!-- 1.2.X is the version of the master branch that this version is based 
 		on; jitsi-oss declares this POM; N declares the this branch/fork version 
 		(incremental) -->
-	<version>1.2.98c7f8c-jitsi-oss1</version>
+	<version>1.2.98c7f8c-jitsi-oss2-SNAPSHOT</version>
 	<packaging>bundle</packaging>
 
 	<name>jain-sip-ri-ossonly</name>
@@ -24,7 +24,7 @@
 		<url>https://github.com/jitsi/jain-sip</url>
 		<connection>scm:git:https://github.com/jitsi/jain-sip.git</connection>
 		<developerConnection>scm:git:https://github.com/jitsi/jain-sip.git</developerConnection>
-	  <tag>v1.2.98c7f8c-jitsi-oss1</tag>
+	  <tag>HEAD</tag>
   </scm>
 
 	<developers>
