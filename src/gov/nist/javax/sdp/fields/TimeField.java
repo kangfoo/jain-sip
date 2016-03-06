@@ -70,7 +70,8 @@ public class TimeField extends SDPField implements Time {
     * @return the date
     */
     public Date getStart() throws SdpParseException {
-        return SdpFactory.getDateFromNtp(startTime);
+        //return SdpFactory.getDateFromNtp(startTime);
+        return new Date((startTime - SdpConstants.NTP_CONST) * 1000);
     }
 
     /** Returns the stop time of the session
@@ -78,7 +79,8 @@ public class TimeField extends SDPField implements Time {
      * @return the stop time of the session.
      */
     public Date getStop() throws SdpParseException {
-        return SdpFactory.getDateFromNtp(stopTime);
+        //return SdpFactory.getDateFromNtp(stopTime);
+        return new Date((stopTime - SdpConstants.NTP_CONST) * 1000);
     }
 
     /** Sets the stop time of the session.
@@ -89,7 +91,7 @@ public class TimeField extends SDPField implements Time {
         if (stop == null)
             throw new SdpException("The date is null");
         else {
-            this.stopTime = SdpFactory.getNtpTime(stop);
+            this.stopTime = (stop.getTime() / 1000) + SdpConstants.NTP_CONST;
         }
     }
 
@@ -101,7 +103,7 @@ public class TimeField extends SDPField implements Time {
         if (start == null)
             throw new SdpException("The date is null");
         else {
-            this.startTime = SdpFactory.getNtpTime(start);
+            this.startTime = (start.getTime() / 1000) + SdpConstants.NTP_CONST;
         }
     }
 
