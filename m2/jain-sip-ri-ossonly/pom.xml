@@ -4,9 +4,10 @@
 	<groupId>org.jitsi</groupId>
 	<artifactId>jain-sip-ri-ossonly</artifactId>
 	<!-- 1.2.X is the version of the master branch that this version is based 
-		on; jitsi-oss declares this POM; N declares the this branch/fork version 
-		(incremental) -->
-	<version>1.2.98c7f8c-jitsi-oss2-SNAPSHOT</version>
+		on; jitsi-ossN declares this POM; N declares the this branch/fork
+		version (incremental if the master branch stayed the same, restarts at
+		1 when a new master is merged in) -->
+	<version>1.2.279-jitsi-oss1-SNAPSHOT</version>
 	<packaging>bundle</packaging>
 
 	<name>jain-sip-ri-ossonly</name>
@@ -68,6 +69,11 @@
 				<artifactId>maven-bundle-plugin</artifactId>
 				<version>3.0.1</version>
 				<extensions>true</extensions>
+				<configuration>
+					<instructions>
+						<DynamicImport-Package>*</DynamicImport-Package>
+					</instructions>
+				</configuration>
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
