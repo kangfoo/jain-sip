@@ -94,7 +94,7 @@ c:/jakarta-ant/bin/ant all
     <property name="ant_jar" value="${ant}"/>
     <property name="fail.build.on.tests.not.passing" value="true"/>
 
-    <property name="source.encoding" value="ISO-8859-1" />
+    <property name="source.encoding" value="UTF-8" />
 
     <property environment="sys" />
 
@@ -852,7 +852,10 @@ c:/jakarta-ant/bin/ant all
                     <echo file="TIMESTAMP" message="Date = ${DSTAMP} Time = ${TSTAMP}" />
                 </target>
 
-                <target name="generate-version" depends="ant-tools,svn-revision,generate-timestamp" >
+<!--                <target name="generate-version" depends="ant-tools,svn-revision,generate-timestamp" >
+ -->
+                <target name="generate-version" depends="ant-tools,generate-timestamp" >
+
     			<property file="ant-version.properties" />
                         <taskdef name="versioner" classname="net.java.jsip.ant.tasks.VersionerTask" classpath="classes"/>
                         <versioner cvsVersionFile="${ant.file.NIST-SIP}/../version.txt"  incrementCVSVersion="false"/>
@@ -870,13 +873,15 @@ c:/jakarta-ant/bin/ant all
                     <antcall target="clean-tasks" />
                 </target>
 
-
-              <target name="svn-revision">
-                 <exec executable="svnversion" spawn="false" dir="./" output="version.txt">
-                 <arg line="."/>
-              </exec>
-              </target>
-
+		<!--
+	              <target name="svn-revision">
+	                 
+		                 <exec executable="svnversion" spawn="false" dir="./" output="version.txt">
+		                 <arg line="."/>
+	               
+	              </exec>
+	              </target>
+	  -->
 	<target name="android-copy">
 		<echo>Copying source for android</echo>
 		<copy encoding="${source.encoding}" outputencoding="${source.encoding}"
