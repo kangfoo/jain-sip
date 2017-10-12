@@ -44,3 +44,12 @@ hs_err_pid*.log
 PutObjectStoreDirHere
 # ignore mvn-rpmbuild repo
 /.m2
+/jain-sdp-1.0.1111.jar
+/jain-sdp-src-1.0.1111.jar
+/jain-sip-api-1.2-src.jar
+/jain-sip-api-1.2.jar
+/jain-sip-ri-1.2.1111.jar
+/jain-sip-sctp-1.2.1111.jar
+/jain-sip-sdp-1.2.1111.jar
+/jain-sip-src-1.2.1111.jar
+/TIMESTAMP

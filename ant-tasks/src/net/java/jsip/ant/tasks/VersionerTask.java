@@ -1,13 +1,9 @@
 package net.java.jsip.ant.tasks;
 
 import java.io.BufferedReader;
-import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.util.Date;
 
 import org.apache.tools.ant.BuildException;
 import org.apache.tools.ant.Task;

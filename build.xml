@@ -345,7 +345,9 @@ c:/jakarta-ant/bin/ant all
 
                 <target name="jain-sip-sdp-jar" depends="compilejain,generate-version">
                     <copy file="TIMESTAMP" toDir="classes/" />
-                    <copy file="version.txt" toDir="classes/" />
+                    <!--
+                    	<copy file="version.txt" toDir="classes/" />
+                     -->
                     <jar destfile="${jain-sip-sdp-jar}" basedir="${classes}" includes="TIMESTAMP,version.txt,javax/**/*.class,gov/nist/**/*.class" >
                         <manifest>
                             <attribute	name="Original-Jar-Name"
